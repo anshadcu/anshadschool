@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FORM</title>
+    <style>
+        body{
+             background-color: orange
+
+        }
+        label{
+             width:100px;
+             display:inline-block;
+             margin:4px;
+        }
+        #submit{
+                width:100px;
+                margin-top:10px;
+        }
+        #form{
+             border-radius:10px;
+             background:black;
+             color:white;
+             width:290px;
+             padding:4px;
+             align:center;
+        }
+        h1{
+           text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<center>
+<div id="form">
+
+
+<h1>Form</h1>
+<hr width="290" align="left">
+<form action="form" method="post">
+        {% csrf_token %}
+       <label for="name">Name:</label>
+       <input type="text" name="name" placeholder="Enter your name"><br>
+
+       <label for="email">Email:</label>
+       <input type="email" name="email" placeholder="Enter your email"><br>
+
+       <label for="phone">Phone No:</label>
+       <input type="phone" name="phonenumber" placeholder="9845***"><br>
+
+<!--       <label for="course">Course:</label>-->
+<!--       <input type="text" name="courses" placeholder="Enter your courses"><br>-->
+
+       <label for="department">Department:</label>
+       <input type="text" placeholder="Department"><br>
+
+       <label for="course">Course:</label>
+       <select name="course">
+           <option value="">Select Course...</option>
+           <option value="BBA">Bba</option>
+           <option value="Commerce">Bachelor of Commerce</option>
+           <option value="Science">Computer Science</option>
+           <option value="Humanities">Bachelor of Education</option>
+           <option value="Humanities">Bsc Nursing</option>
+           <option value="Humanities">Chemistry</option>
+           <option value="Humanities">Bachelor of Low</option>
+       </select>
+
+       <label for="purpose">Purpose:</label>
+       <input type="text" placeholder="purpose">
+
+       <label for="address">Address:</label>
+       <tr>
+          <td>
+              <textarea rows="3" cols="22" placeholder="Address"></textarea>
+          </td>
+       </tr><br>
+
+
+
+
+       <label for="age">Age:</label>
+       <tr>
+           <td>
+               <input type="number" min="1" max="70">
+           </td>
+
+       </tr>
+
+       <label for="age">Date of birth:</label>
+       <tr>
+           <td>
+               <input type="date">
+           </td>
+       </tr>
+
+
+       <label for="gender">Gender:</label>
+       <input type="radio" name="gender">male
+       <input type="radio" name="gender">female<br>
+
+       <label for="materials">Materials:</label>
+       <input type="checkbox" name="materials">laptop
+       <input type="checkbox" name="materials">Bag
+       <input type="checkbox" name="materials">printer
+<!--       <input type="checkbox" name="materials">Books-->
+<!--       <input type="checkbox" name="materials">pen-->
+<!--       <input type="checkbox" name="materials">pencil<br>-->
+<!--       <input type="radio" name="gender">other<br>-->
+
+
+<!--       <label for="age">Date of birth:</label>-->
+<!--         <select for="date" required>-->
+<!--             <option value="age" selected disabled>date</option>-->
+<!--             <option value="01">18</option>-->
+<!--             <option value="01">19</option>-->
+<!--             <option value="01">20</option>-->
+<!--             <option value="01">21</option>-->
+<!--             <option value="01">22</option>-->
+<!--             //you can write the number as much you wish//-->
+<!--         </select>-->
+<!--         <select for="month">-->
+<!--             <option value="age" selected disabled>month</option>-->
+<!--             <option value="01">jan</option>-->
+<!--             <option value="01">feb</option>-->
+<!--             <option value="01">mar</option>-->
+<!--             <option value="01">apr</option>-->
+<!--             <option value="01">may</option>-->
+<!--             <option value="01">jun</option>-->
+<!--             <option value="01">jul</option>-->
+<!--             <option value="01">agu</option>-->
+<!--             <option value="01">sep</option>-->
+<!--             <option value="01">oct</option>-->
+<!--             <option value="01">num</option>-->
+<!--             <option value="01">dec</option>-->
+<!--         </select>-->
+<!--         <select for="year">-->
+<!--             <option value="year" selected disabled>Year</option>-->
+<!--             <option value="01">1998</option>-->
+<!--             <option value="01">1999</option>-->
+<!--             <option value="01">2000</option>-->
+<!--             <option value="01">2001</option>-->
+<!--             <option value="01">2002</option>-->
+<!--             <option value="01">2003</option>-->
+<!--         </select><br>-->
+
+
+
+<!--          <td>-->
+<!--              <select>-->
+<!--                  <option>977</option>-->
+<!--                  <option>978</option>-->
+<!--                  <option>976</option>-->
+<!--                  <option>977</option>-->
+<!--                  <option>977</option>-->
+<!--                  <option>977</option>-->
+<!--                  <option>977</option>-->
+<!--                  <option>977</option>-->
+<!--              </select>-->
+<!--          </td>-->
+
+
+
+
+
+
+       <lebal>
+       <input type="submit" id="submit"><br>
+       <input type="button" value="Go back!" onclick="history.back()">
+       </lebal>
+    <div class="alert">
+        <span class="closebtn"
+              onclick="this.parentElement.style.display='none';">&times;</span>
+        ORDER CONFIRMED.
+    </div>
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+
+</div>
+</center>
+</body>
+</html>
